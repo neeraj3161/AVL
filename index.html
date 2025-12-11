@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SATURNSOFT SECURITY SOLUTION | Solar Power I&C Experts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind custom config -->
+  <script>
+   tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        brand: "#0c9fb7",
+        brandDark: "#047189",
+        brandSoft: "#e5f7f9",
+      }
+    }
+  }
+}
+
+  </script>
+
+  <!-- Anime.js CDN (animate.js as requested) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .glass {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+}
+.dark .glass {
+  background: rgba(15, 23, 42, 0.6); /* dark slate transparency */
+}
+
+  </style>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300">
+
+
+  <!-- Background gradient -->
+  <div class="fixed inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900"></div>
+  <div class="fixed inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_top,_#0ea5e9_0,_transparent_55%)]"></div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40">
+    <nav class="glass border-b border-white/30">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-xl bg-brand flex items-center justify-center text-white font-bold text-lg">
+            A
+          </div>
+          <div>
+            <p class="text-sm font-semibold text-slate-800">AVL</p>
+            <p class="text-[11px] uppercase tracking-[0.18em] text-slate-500">
+              SOLAR POWER
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
+          <a href="#about" class="hover:text-brand">Company</a>
+          <a href="#services" class="hover:text-brand">Services</a>
+          <a href="#why-us" class="hover:text-brand">Why Us</a>
+          <a href="#clients" class="hover:text-brand">Clients</a>
+          <a href="#contact" class="hover:text-brand">Contact</a>
+          <a href="#faq" class="hover:text-brand">FAQ</a>
+          <button id="themeToggle" class="w-9 h-9 rounded-lg flex items-center justify-center 
+text-slate-700 dark:text-white hover:text-brand transition">
+  ☀️
+</button>
+
+          <a href="#quote" class="ml-2 px-3 py-1.5 rounded-full bg-brand text-white shadow shadow-brandDark/40 hover:bg-brandDark transition">
+            Get a Quote
+          </a>
+        </div>
+
+        <button id="mobileMenuBtn" class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/40 text-white">
+          <span class="sr-only">Open menu</span>
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 glass border-t border-white/20">
+        <div class="px-4 pb-4 pt-2 flex flex-col gap-2 text-sm font-medium text-slate-700">
+          <a href="#about" class="py-1 hover:text-brand">Company</a>
+          <a href="#services" class="py-1 hover:text-brand">Services</a>
+          <a href="#why-us" class="py-1 hover:text-brand">Why Us</a>
+          <a href="#clients" class="py-1 hover:text-brand">Clients</a>
+          <a href="#contact" class="py-1 hover:text-brand">Contact</a>
+          <a href="#quote" class="mt-1 inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-brand text-white hover:bg-brandDark">
+            Get a Quote
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 pb-16 pt-10 md:pt-16">
+
+    <!-- Hero -->
+    <section id="hero" class="grid md:grid-cols-2 gap-10 items-center mb-16">
+      <div class="text-white">
+        <p class="text-xs tracking-[0.28em] uppercase text-sky-300 mb-3 hero-kicker">
+          Solar Power I & C Experts
+        </p>
+        <h1 class="hero-heading text-3xl md:text-5xl font-semibold leading-tight mb-4">
+          Solar Power Installation &<br class="hidden md:block" />
+          Commissioning Done Right.
+        </h1>
+        <p class="hero-subtitle text-sm md:text-base text-slate-300 max-w-xl mb-6">
+          SATURNSOFT SECURITY SOLUTION delivers end-to-end rooftop, ground-mounted,
+          hybrid and off-grid solar projects—designed, installed and commissioned by
+          certified experts for residential, commercial and industrial clients.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-6">
+          <a href="#quote"
+             class="px-5 py-2.5 rounded-full bg-brand text-white text-sm font-medium shadow-lg shadow-brand/40 hover:bg-brandDark transition">
+            Book Site Visit
+          </a>
+          <a href="#services"
+             class="px-4 py-2.5 rounded-full border border-slate-500 text-xs md:text-sm font-medium text-slate-200 hover:border-brand hover:text-brand transition">
+            View Core Services
+          </a>
+        </div>
+        <div class="flex gap-6 text-[11px] text-slate-300">
+          <div>
+            <p class="font-semibold text-white text-base">14+</p>
+            <p>Years of experience</p>
+          </div>
+          <div>
+            <p class="font-semibold text-white text-base">1MW+</p>
+            <p>Projects commissioned</p>
+          </div>
+          <div>
+            <p class="font-semibold text-white text-base">100%</p>
+            <p>IEC &amp; BIS compliant</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative md:justify-self-end">
+        <div class="w-full max-w-sm md:max-w-md mx-auto glass rounded-3xl border border-white/30 p-5 shadow-xl shadow-cyan-500/20 section-card"
+             data-animate="zoom">
+          <div class="flex items-center justify-between mb-3">
+            <p class="text-xs font-semibold tracking-widest text-brandDark uppercase">
+              Live Solar Health
+            </p>
+            <span class="inline-flex items-center text-[11px] text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded-full">
+              ● Online
+            </span>
+          </div>
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between">
+              <span class="text-slate-500">Current Output</span>
+              <span class="font-semibold text-slate-900">182.4 kW</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">Today's Yield</span>
+              <span class="font-semibold text-slate-900">734 kWh</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500">CO₂ Saved</span>
+              <span class="font-semibold text-slate-900">412 kg</span>
+            </div>
+
+            <div class="mt-4">
+              <p class="text-[11px] font-semibold text-slate-600 mb-1">
+                Typical Project Mix
+              </p>
+              <div class="grid grid-cols-4 gap-2 text-[10px]">
+                <div class="rounded-xl bg-brandSoft px-2 py-1.5 text-center">
+                  <p class="font-semibold text-slate-900">Rooftop</p>
+                  <p class="text-[9px] text-slate-500">45%</p>
+                </div>
+                <div class="rounded-xl bg-brandSoft px-2 py-1.5 text-center">
+                  <p class="font-semibold text-slate-900">Ground</p>
+                  <p class="text-[9px] text-slate-500">30%</p>
+                </div>
+                <div class="rounded-xl bg-brandSoft px-2 py-1.5 text-center">
+                  <p class="font-semibold text-slate-900">Hybrid</p>
+                  <p class="text-[9px] text-slate-500">15%</p>
+                </div>
+                <div class="rounded-xl bg-brandSoft px-2 py-1.5 text-center">
+                  <p class="font-semibold text-slate-900">Off-Grid</p>
+                  <p class="text-[9px] text-slate-500">10%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-5 border-t border-slate-200 pt-4 flex items-center justify-between">
+            <div class="text-[10px] text-slate-500">
+              <p class="font-semibold text-slate-700">Certified I&amp;C Partner</p>
+              <p>ISO 9001 • 45001 • 14001</p>
+            </div>
+            <div class="flex -space-x-2">
+              <div class="w-7 h-7 rounded-full bg-sky-400/90 border-2 border-white"></div>
+              <div class="w-7 h-7 rounded-full bg-emerald-400/90 border-2 border-white"></div>
+              <div class="w-7 h-7 rounded-full bg-amber-400/90 border-2 border-white text-[10px] flex items-center justify-center font-semibold text-slate-800">
+                +
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mb-16 text-slate-800" data-animate="fade-up">
+      <div class="glass rounded-3xl border border-white/20 p-6 md:p-8">
+        <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-2">
+          Company Overview
+        </p>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+          Leading Solar Installation &amp; Commissioning Partner Since 2010
+        </h2>
+        <p class="text-sm md:text-[15px] text-slate-600 mb-4">
+          SATURNSOFT SECURITY SOLUTIONS is a specialist in the design, installation and
+          commissioning of solar power systems for residential, commercial and industrial
+          customers. From rooftop plants to utility-scale ground-mounted systems, we
+          deliver technically sound, standards-compliant projects with seamless grid
+          integration and strong after-sales support.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 text-sm">
+          <div class="space-y-3">
+            <div>
+              <h3 class="font-semibold text-sky-600 text-sm">Our Vision</h3>
+              <p class="text-slate-600 text-[13px]">
+                To empower communities and industries by delivering clean, affordable and
+                sustainable solar energy solutions that reduce dependence on conventional
+                power sources.
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-sky-600 text-sm">Our Mission</h3>
+              <p class="text-slate-600 text-[13px]">
+                To be a trusted long-term partner in solar energy by offering efficient,
+                innovative and cost-effective installation &amp; commissioning services
+                backed by qualified engineers, clear documentation and reliable O&amp;M.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 text-[13px]">
+            <div class="rounded-2xl bg-slate-900/60 border border-white/10 p-4">
+              <p class="text-xs font-semibold mb-1 text-sky-300">What we focus on</p>
+              <ul class="space-y-1 text-slate-200 list-disc list-inside">
+                <li>High-quality engineering</li>
+                <li>Reliable, Tier-1 technology</li>
+                <li>On-time project delivery</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl bg-slate-900/60 border border-white/10 p-4">
+              <p class="text-xs font-semibold mb-1 text-sky-300">What you get</p>
+              <ul class="space-y-1 text-slate-200 list-disc list-inside">
+                <li>Lower energy bills</li>
+                <li>Reduced carbon footprint</li>
+                <li>Single point of ownership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+<section id="services" class="mb-16 text-slate-800" data-animate="fade-up">
+
+  <!-- Heading -->
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <p class="text-xs tracking-[0.25em] uppercase text-sky-500 mb-2">
+        Core Services
+      </p>
+      <h2 class="text-2xl md:text-3xl font-semibold text-white">
+        From Design to Commissioning & Beyond
+      </h2>
+    </div>
+  </div>
+
+  <!-- Service Cards Container -->
+  <div class="glass rounded-3xl border border-white/20 p-6 md:p-8 mb-10">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 text-[13px]">
+
+      <!-- Installation -->
+      <div class="rounded-2xl bg-white/85 border border-sky-300/40 p-4 text-slate-800 shadow-md">
+        <h3 class="font-semibold text-brandDark text-sm mb-2">
+          Solar Power Installation
+        </h3>
+        <ul class="space-y-1 text-slate-700">
+          <li>• Rooftop Solar (Residential / Commercial)</li>
+          <li>• Industrial Ground-Mounted Systems</li>
+          <li>• Hybrid & Off-grid Solar Solutions</li>
+          <li>• Battery-backed systems</li>
+        </ul>
+      </div>
+
+      <!-- Commissioning -->
+      <div class="rounded-2xl bg-white/85 border border-sky-300/40 p-4 text-slate-800 shadow-md">
+        <h3 class="font-semibold text-brandDark text-sm mb-2">
+          Commissioning & Testing
+        </h3>
+        <ul class="space-y-1 text-slate-700">
+          <li>• Pre-commissioning inspections</li>
+          <li>• Performance & safety testing</li>
+          <li>• Grid synchronisation & handover</li>
+          <li>• Documentation & training</li>
+        </ul>
+      </div>
+
+      <!-- O&M -->
+      <div class="rounded-2xl bg-white/85 border border-sky-300/40 p-4 text-slate-800 shadow-md">
+        <h3 class="font-semibold text-brandDark text-sm mb-2">
+          Operation & Maintenance (O&M)
+        </h3>
+        <ul class="space-y-1 text-slate-700">
+          <li>• 24×7 system monitoring</li>
+          <li>• Preventive maintenance</li>
+          <li>• Corrective breakdown support</li>
+          <li>• Annual service contracts</li>
+        </ul>
+      </div>
+
+      <!-- EPC -->
+      <div class="rounded-2xl bg-white/85 border border-sky-300/40 p-4 text-slate-800 shadow-md">
+        <h3 class="font-semibold text-brandDark text-sm mb-2">
+          Engineering, Procurement & Construction
+        </h3>
+        <ul class="space-y-1 text-slate-700">
+          <li>• Site analysis & feasibility study</li>
+          <li>• Custom system design</li>
+          <li>• Component sizing & selection</li>
+          <li>• Project approvals & liaisoning</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Process Steps -->
+  <div class="grid md:grid-cols-4 gap-4 text-[12px]">
+    
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-semibold text-xs">1</div>
+      <div>
+        <p class="font-semibold text-white">Site Survey</p>
+        <p class="text-slate-300">On-site visit, shading & load analysis.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-semibold text-xs">2</div>
+      <div>
+        <p class="font-semibold text-white">Engineering Design</p>
+        <p class="text-slate-300">Optimal layout & string design.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-semibold text-xs">3</div>
+      <div>
+        <p class="font-semibold text-white">Execution & I&C</p>
+        <p class="text-slate-300">Safe installation & testing.</p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 rounded-full bg-brand flex items-center justify-center text-white font-semibold text-xs">4</div>
+      <div>
+        <p class="font-semibold text-white">O&M Support</p>
+        <p class="text-slate-300">Performance tracking & AMC.</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="mb-16" data-animate="fade-up">
+      <div class="glass rounded-3xl border border-white/20 p-6 md:p-8">
+        <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-2">
+          Why Choose Us
+        </p>
+        <h2 class="text-2xl md:text-3xl text-slate-800 mb-4">
+          Certified, Compliant &amp; Customer-First.
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6 text-[13px]">
+          <div>
+            <ul class="space-y-2 text-slate-600">
+              <li>✅ Certified engineers &amp; technicians</li>
+              <li>✅ Full compliance with IEC &amp; BIS standards</li>
+              <li>✅ End-to-end project management</li>
+              <li>✅ Competitive pricing &amp; timely delivery</li>
+              <li>✅ Strong after-sales support</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl bg-slate-900/70 border border-white/15 p-4">
+              <p class="text-xs font-semibold text-sky-300 mb-1">
+                Certifications
+              </p>
+              <ul class="space-y-1 text-[12px] text-slate-200">
+                <li>• ISO 9001:2015</li>
+                <li>• ISO 45001:2018</li>
+                <li>• ISO 14001:2015</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl bg-slate-900/70 border border-white/15 p-4">
+              <p class="text-xs font-semibold text-sky-300 mb-1">
+                Technology Partners
+              </p>
+              <p class="text-[12px] text-slate-200">
+                Tier-1 solar panel &amp; inverter OEMs,
+                along with complete statutory documentation
+                (ESIC, PF and more).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <section id="clients" class="mb-16" data-animate="fade-up">
+
+  <div class="flex items-center justify-between mb-6">
+    <div>
+      <p class="text-xs tracking-[0.25em] uppercase text-sky-500 mb-2">
+        Our Clients
+      </p>
+      <h2 class="text-2xl md:text-3xl font-semibold text-white dark:text-white">
+        Trusted by Industry Leaders
+      </h2>
+    </div>
+  </div>
+
+  <!-- Clients Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+    <!-- Client 1 -->
+    <div class="glass dark:bg-slate-800/60 rounded-xl p-4 flex flex-col items-center 
+                border border-white/10 hover:shadow-xl transition">
+      <img src="assets/clients/zenwave.png" 
+           alt="Zenwave Logo" class="h-10 object-contain mb-2 opacity-90" />
+      <p class="text-sm font-semibold text-slate-800 dark:text-white">Zenwave Software</p>
+      <p class="text-xs text-slate-500 dark:text-slate-300">100 kW Rooftop Plant</p>
+    </div>
+
+    <!-- Client 2 -->
+    <div class="glass dark:bg-slate-800/60 rounded-xl p-4 flex flex-col items-center 
+                border border-white/10 hover:shadow-xl transition">
+      <img src="assets/clients/tapovan.png" 
+           alt="Tapovan Logo" class="h-10 object-contain mb-2 opacity-90" />
+      <p class="text-sm font-semibold text-slate-800 dark:text-white">Tapovan Auto Tech</p>
+      <p class="text-xs text-slate-500 dark:text-slate-300">1 MW Ground Mounted</p>
+    </div>
+
+    <!-- Client 3 -->
+    <div class="glass dark:bg-slate-800/60 rounded-xl p-4 flex flex-col items-center 
+                border border-white/10 hover:shadow-xl transition">
+      <img src="assets/clients/sanco.png" 
+           alt="Sanco Logo" class="h-10 object-contain mb-2 opacity-90" />
+      <p class="text-sm font-semibold text-slate-800 dark:text-white">SANCO Spaces</p>
+      <p class="text-xs text-slate-500 dark:text-slate-300">Hybrid Solar System</p>
+    </div>
+
+    <!-- Client 4 -->
+    <div class="glass dark:bg-slate-800/60 rounded-xl p-4 flex flex-col items-center 
+                border border-white/10 hover:shadow-xl transition">
+      <img src="assets/clients/fourthpartner.png" 
+           alt="Fourth Partner Logo" class="h-10 object-contain mb-2 opacity-90" />
+      <p class="text-sm font-semibold text-slate-800 dark:text-white">
+        Fourth Partner Energy
+      </p>
+      <p class="text-xs text-slate-500 dark:text-slate-300">I&C Partner Work</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- Quote form -->
+    <section id="quote" class="mb-16" data-animate="fade-up">
+      <div class="glass rounded-3xl border border-white/25 p-6 md:p-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-2">
+              Request a Quote
+            </p>
+            <h2 class="text-2xl md:text-3xl text-slate-800 font-semibold mb-3">
+              Ready to go solar? Share your requirement.
+            </h2>
+            <p class="text-sm text-slate-600 mb-4">
+              Tell us about your site and current electricity usage. Our team will
+              design a custom-tailored solution and send you a detailed proposal with
+              payback analysis within 2–3 working days.
+            </p>
+            <ul class="text-xs text-slate-600 space-y-1">
+              <li>• Residential rooftops from 3 kW onwards</li>
+              <li>• Commercial &amp; industrial plants up to multi-MW</li>
+              <li>• Hybrid &amp; off-grid solutions for remote locations</li>
+            </ul>
+          </div>
+
+          <form class="space-y-3 text-xs">
+            <div class="grid md:grid-cols-2 gap-3">
+              <div>
+                <label class="block mb-1 text-slate-600">Name</label>
+                <input type="text" class="w-full rounded-xl bg-slate-900/70 border border-white/20 px-3 py-2 text-slate-100 focus:outline-none focus:border-brand" placeholder="Your full name" />
+              </div>
+              <div>
+                <label class="block mb-1 text-slate-600">Phone</label>
+                <input type="tel" class="w-full rounded-xl bg-slate-900/70 border border-white/20 px-3 py-2 text-slate-100 focus:outline-none focus:border-brand" placeholder="Contact number" />
+              </div>
+            </div>
+            <div>
+              <label class="block mb-1 text-slate-600">Email</label>
+              <input type="email" class="w-full rounded-xl bg-slate-900/70 border border-white/20 px-3 py-2 text-slate-100 focus:outline-none focus:border-brand" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label class="block mb-1 text-slate-600">Project Type</label>
+              <select class="w-full rounded-xl bg-slate-900/70 border border-white/20 px-3 py-2 text-slate-100 focus:outline-none focus:border-brand">
+                <option>Rooftop – Residential</option>
+                <option>Rooftop – Commercial / Industrial</option>
+                <option>Ground-Mounted</option>
+                <option>Hybrid / Off-Grid</option>
+              </select>
+            </div>
+            <div>
+              <label class="block mb-1 text-slate-600">Message</label>
+              <textarea rows="3" class="w-full rounded-xl bg-slate-900/70 border border-white/20 px-3 py-2 text-slate-100 focus:outline-none focus:border-brand" placeholder="Tell us about your load, location &amp; expectations"></textarea>
+            </div>
+            <button type="button" class="w-full mt-2 rounded-full bg-brand py-2.5 text-sm font-semibold text-white hover:bg-brandDark shadow-lg shadow-brand/40">
+              Submit Request
+            </button>
+            <p class="text-[10px] text-slate-600 mt-1">
+              Our team will get in touch.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+   <section id="contact" data-animate="fade-up">
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Contact Left -->
+    <div class="glass rounded-3xl border border-white/20 p-6 md:p-8">
+      <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-2">
+        Contact Us
+      </p>
+      <h2 class="text-2xl text-slate-800 md:text-3xl font-semibold mb-3">
+        Let’s power your next project.
+      </h2>
+
+      <div class="space-y-2 text-sm text-slate-600">
+        <p>
+          <span class="font-semibold text-sky-600">Address:</span><br>
+          JRPM+234, MIDC, Bhosari, Pimpri-Chinchwad, Pune, Maharashtra 411026
+        </p>
+
+        <p>
+          <span class="font-semibold text-sky-600">Phone:</span><br>
+          <a href="tel:+919762999109" class="hover:text-sky-800">+91 97629 99109</a>
+        </p>
+
+        <p>
+          <span class="font-semibold text-sky-600">Email:</span><br>
+          <a href="mailto:info@avlsolarpower.com" class="hover:text-sky-800">
+            info@avlsolarpower.com
+          </a>
+        </p>
+      </div>
+
+      <!-- MAP -->
+      <div class="mt-5 rounded-2xl overflow-hidden border border-slate-300 shadow-lg">
+        <iframe 
+          src="https://www.google.com/maps?q=JRPM%2B234%2C%20MIDC%2C%20Bhosari%2C%20Pimpri-Chinchwad%2C%20Pune%2C%20Maharashtra%20411026&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Follow Us Right -->
+    <div class="glass rounded-3xl border border-white/20 p-6 md:p-8">
+      <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-2">Follow Us</p>
+      <p class="text-sm text-slate-600 mb-3">
+        Stay updated with our latest solar installations, technology upgrades and
+        energy-saving insights.
+      </p>
+
+      <div class="flex flex-wrap text-white gap-3 text-xs">
+        <button class="px-4 py-2 rounded-full bg-slate-900/80 border border-white/20 hover:border-sky-400">
+          Facebook
+        </button>
+        <button class="px-4 py-2 rounded-full bg-slate-900/80 border border-white/20 hover:border-sky-400">
+          Instagram
+        </button>
+        <button class="px-4 py-2 rounded-full bg-slate-900/80 border border-white/20 hover:border-sky-400">
+          LinkedIn
+        </button>
+      </div>
+
+      <div class="mt-6 grid grid-cols-2 gap-3 text-[11px] text-slate-200">
+        <div class="rounded-xl bg-slate-900/70 border border-emerald-400/30 p-3">
+          <p class="font-semibold text-emerald-300 text-xs mb-1">Solar Power</p>
+          <p>Grid-connected & off-grid solutions.</p>
+        </div>
+        <div class="rounded-xl bg-slate-900/70 border border-amber-400/30 p-3">
+          <p class="font-semibold text-amber-300 text-xs mb-1">HT / LT Panels</p>
+          <p>Safe distribution & protection systems.</p>
+        </div>
+        <div class="rounded-xl bg-slate-900/70 border border-sky-400/30 p-3">
+          <p class="font-semibold text-sky-300 text-xs mb-1">Modules</p>
+          <p>Tier-1 high-efficiency solar modules.</p>
+        </div>
+        <div class="rounded-xl bg-slate-900/70 border border-pink-400/30 p-3">
+          <p class="font-semibold text-pink-300 text-xs mb-1">Energy Audits</p>
+          <p>Identify savings, optimise payback.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="mt-8 text-[11px] text-center text-slate-500">
+    © 2010–2025 AVL Solar Power. All rights reserved.
+  </p>
+</section>
+
+
+  </main>
+
+  <!-- Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu toggle
+      const btn = document.getElementById("mobileMenuBtn");
+      const menu = document.getElementById("mobileMenu");
+      btn.addEventListener("click", () => {
+        if (menu.style.maxHeight && menu.style.maxHeight !== "0px") {
+          menu.style.maxHeight = "0px";
+        } else {
+          menu.style.maxHeight = menu.scrollHeight + "px";
+        }
+      });
+
+      // Hero animation
+      if (window.anime) {
+        anime.timeline({ easing: "easeOutExpo", duration: 900 })
+          .add({
+            targets: ".hero-heading",
+            translateY: [40, 0],
+            opacity: [0, 1]
+          })
+          .add({
+            targets: ".hero-subtitle",
+            translateY: [20, 0],
+            opacity: [0, 1]
+          }, "-=400")
+          .add({
+            targets: ".hero-kicker",
+            opacity: [0, 1]
+          }, 0);
+      }
+
+// Load theme from localStorage
+if (localStorage.theme === 'light') {
+  document.documentElement.classList.remove('dark')
+} else {
+  document.documentElement.classList.add('dark')
+}
+
+// Toggle button
+document.getElementById("themeToggle").addEventListener("click", () => {
+  const html = document.documentElement;
+
+  if (html.classList.contains("dark")) {
+    html.classList.remove("dark");
+    localStorage.theme = "light";
+    document.getElementById("themeToggle").innerHTML = "🌙";
+  } else {
+    html.classList.add("dark");
+    localStorage.theme = "dark";
+    document.getElementById("themeToggle").innerHTML = "☀️";
+  }
+});
+
+
+      // Section animations on scroll
+      const animatedSections = document.querySelectorAll("[data-animate]");
+      const cards = document.querySelectorAll(".section-card");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && window.anime) {
+            const type = entry.target.dataset.animate;
+            if (type === "fade-up") {
+              anime({
+                targets: entry.target,
+                translateY: [40, 0],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutExpo"
+              });
+            } else if (type === "zoom") {
+              anime({
+                targets: entry.target,
+                scale: [0.9, 1],
+                opacity: [0, 1],
+                duration: 800,
+                easing: "easeOutExpo"
+              });
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      animatedSections.forEach(sec => {
+        sec.style.opacity = 0;
+        observer.observe(sec);
+      });
+
+      cards.forEach(card => {
+        card.style.opacity = 0;
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
